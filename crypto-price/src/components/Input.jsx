@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card, CardTitle, CardSubtitle, InputGroup, InputGroupAddon, Input, Button, CardBody  } from 'reactstrap';
+import '../css/Input.css'
 
 const NewCoin = () => {
 
@@ -26,14 +27,14 @@ const NewCoin = () => {
         console.log("fetchPrice result: " + JSON.stringify(res))
         setCoin({...coin, price: res.data.ticker.price})
       })
-      .catch(err => console.log(err))
+      .catch(err => alert("Invalid Ticker Symbol, Please Try Again!"))
   }
 
   return(
-    <div>
+    <div className='Input'>
       <InputGroup>
           <InputGroupAddon addonType="prepend">
-            <Button color="danger" onClick={clearForm}>Clear</Button>
+            <Button className='input-button' color="danger" onClick={clearForm}>Clear</Button>
           </InputGroupAddon>
         <Input
           type="text"
@@ -42,7 +43,7 @@ const NewCoin = () => {
           onChange={handleChanges}
         />
           <InputGroupAddon addonType="append">
-            <Button color="success" onChange={handleChanges} onClick={fetchPrice}>Get Price</Button>
+            <Button className='input-button' color="success" onChange={handleChanges} onClick={fetchPrice}>Get Price</Button>
           </InputGroupAddon>
         
       </InputGroup>

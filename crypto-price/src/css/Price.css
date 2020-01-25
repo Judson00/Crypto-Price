@@ -1,0 +1,16 @@
+.Price{
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2{
+  margin-top: 30px;
+}
+
+Button{
+  display: flex;
+  align-items: center;
+  width: 200px
+}

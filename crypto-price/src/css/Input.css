@@ -1,0 +1,10 @@
+.Input{
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.input-button{
+  width: 90px;
+}

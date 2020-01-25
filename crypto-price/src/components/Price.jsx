@@ -3,16 +3,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
-
+import '../css/Price.css';
 import { fetchPrice } from '../actions';
 import Loader from 'react-loader-spinner';
 
 const Price = props => {
   return (
-    <div>
-      <h1>Crypto Price</h1>
+    <div className='Price'>
       {!props.price && props.isLoading && (
-        <h2>Find the Price!</h2>
+        <h2>Finding the Price!</h2>
       )}
       {props.isLoading && (
         <Loader
@@ -30,7 +29,7 @@ const Price = props => {
         !props.loading 
           && 
         <div>
-          <h2>{`${props.price.ticker.base} = $ ${props.price.ticker.price}`}</h2>
+          <h2>{`${props.price.ticker.base} = $${props.price.ticker.price}`}</h2>
         </div>
       }
 

@@ -6,7 +6,8 @@ import NewCoin from './Input';
 function App() {
   return (
     <div className="App">
-      <Price Crypto />
+      <h1>Crypto Price</h1>
+      <Price />
       <NewCoin />
     </div>
   );
