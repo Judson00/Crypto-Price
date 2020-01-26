@@ -3,6 +3,7 @@
 import { 
   FETCHING_PRICE_START, 
   FETCHING_PRICE_SUCCESS,
+  FETCHING_PRICE_FAILURE
 } from '../actions';
 
 const initialState = {
@@ -23,6 +24,12 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         price: action.payload
+      }
+    case FETCHING_PRICE_FAILURE:
+      return{
+        ...state,
+        isLoading: false,
+        price: null
       }
     default:
       console.log(state)
