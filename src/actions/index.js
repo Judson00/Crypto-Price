@@ -5,6 +5,7 @@ import axios from 'axios';
 export const FETCHING_PRICE_START = "FETCHING_PRICE_START"
 export const FETCHING_PRICE_SUCCESS = "FETCHING_PRICE_SUCCESS"
 export const FETCHING_PRICE_FAILURE = "FETCHING_PRICE_FAILURE"
+export const CLEARING_PRICE = "CLEARING_PRICE";
 
 export const fetchPrice = () => {
   return dispatchEvent => {
@@ -27,5 +28,14 @@ export const fetchPrice = () => {
           payload: err.response 
         })
       })
+  }
+}
+
+export const clearPrice = () => {
+  return dispatchEvent => {
+    dispatchEvent({
+      type: CLEARING_PRICE,
+      payload: null
+    })
   }
 }
