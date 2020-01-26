@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import '../css/Price.css';
 import { fetchPrice } from '../actions';
+import { clearPrice } from '../actions';
 import Loader from 'react-loader-spinner';
 
 const Price = props => {
@@ -23,6 +24,9 @@ const Price = props => {
       />
       )}
       <Button color="primary" onClick={props.fetchPrice}>Get Price of BTC</Button>
+
+      <Button color="warning" onClick={props.clearPrice}>Clear Price</Button>
+
       {
         props.price 
           && 
@@ -48,5 +52,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps, 
-  { fetchPrice }
+  { fetchPrice, clearPrice }
 )(Price);
